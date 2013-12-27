@@ -31,11 +31,11 @@ public class LandUnitTest {
         } catch (TerrainNonRepertorieException e) {}
 
         try {
-        	Land.getLandByOrdinal(-1);
+        	Land.getLandByOrdinal(6);
         } catch (TerrainNonRepertorieException e) {}
         
         try {
-        	Land.getLandByOrdinal(18);
+        	Land.getLandByOrdinal(-6);
         } catch (TerrainNonRepertorieException e) {}
     }
 
