@@ -69,14 +69,14 @@ public class BatteryUnitTest {
 	@Test
 	public void timeToSufficientChargeTest() {
 		Battery b = new Battery();
-        assertTrue(b.timeToSufficientCharge(100) == 0);
+		assertTrue(b.timeToSufficientCharge(100) == 0);
         assertTrue(b.timeToSufficientCharge(150) == 5000);
 	}
 	
 	@Test
-	 public void canDeliverTest() {
-        Battery b = new Battery();
-        assertFalse(b.canDeliver(150));
-        assertTrue(b.canDeliver(50));
+	public void canDeliverTest() {
+		Battery b = new Battery();
+		assertFalse(b.canDeliver(150));
+		assertTrue(b.canDeliver(50));
     }
 }
