@@ -49,17 +49,17 @@ public class Robot {
         return direction;
     }
 
-    public void moveForward() throws UnlandedRobotException, InsufficientChargeException, LandSensorDefaillance, InaccessibleCoordinate {
+    public void moveForward() throws UnlandedRobotException, InsufficientChargeException, LandSensorDefaillance, InaccessibleCoordinate, NegativeEnergyException {
         if (!isLanded) throw new UnlandedRobotException();
         moveTo(MapTools.nextForwardPosition(position, direction));
     }
 
-    public void moveBackward() throws UnlandedRobotException, InsufficientChargeException, LandSensorDefaillance, InaccessibleCoordinate {
+    public void moveBackward() throws UnlandedRobotException, InsufficientChargeException, LandSensorDefaillance, InaccessibleCoordinate, NegativeEnergyException {
         if (!isLanded) throw new UnlandedRobotException();
         moveTo(MapTools.nextBackwardPosition(position, direction));
     }
 
-    private void moveTo(Coordinates nextPosition) throws InsufficientChargeException, LandSensorDefaillance, InaccessibleCoordinate {
+    private void moveTo(Coordinates nextPosition) throws InsufficientChargeException, LandSensorDefaillance, InaccessibleCoordinate, NegativeEnergyException {
         double neededEnergy = 0;
             neededEnergy = landSensor.getPointToPointEnergyCoefficient(position, nextPosition) * energyConsumption;
         if (!cells.canDeliver(neededEnergy)) throw new InsufficientChargeException();
@@ -81,7 +81,7 @@ public class Robot {
         this.roadBook = roadBook;
     }
 
-    public void letsGo() throws UnlandedRobotException, UndefinedRoadbookException, InsufficientChargeException, LandSensorDefaillance, InaccessibleCoordinate {
+    public void letsGo() throws UnlandedRobotException, UndefinedRoadbookException, InsufficientChargeException, LandSensorDefaillance, InaccessibleCoordinate, NegativeEnergyException {
         if (roadBook == null) throw new UndefinedRoadbookException();
         while (roadBook.hasInstruction()) {
             Instruction nextInstruction = roadBook.next();

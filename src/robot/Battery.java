@@ -27,6 +27,7 @@ public class Battery {
             @Override
             public void run() {
                 charge();
+                getChargeLevel();
             }
         }, 0, CHARGE_TOP);
     }
@@ -35,7 +36,8 @@ public class Battery {
         return chargeLevel;
     }
 
-    public void use(double energy) throws InsufficientChargeException {
+    public void use(double energy) throws InsufficientChargeException, NegativeEnergyException {
+    	if (energy <= 0 ) throw new NegativeEnergyException();
         if (chargeLevel < energy) throw new InsufficientChargeException();
         chargeLevel -= energy;
     }
