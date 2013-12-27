@@ -21,17 +21,17 @@ public class MapToolsUnitTest {
 		 * Test sur les coordonnees avec Direction.NORTH
 		 */
 		assertTrue(MapTools.nextForwardPosition(new Coordinates(0, 0),
-				Direction.NORTH).getX() == new Coordinates(0, 1).getX());
+				Direction.NORTH).getX() == new Coordinates(0, -1).getX());
 		assertTrue(MapTools.nextForwardPosition(new Coordinates(0, 0),
-				Direction.NORTH).getY() == new Coordinates(0, 1).getY());
+				Direction.NORTH).getY() == new Coordinates(0, -1).getY());
 
 		/*
 		 * Test sur les coordonnees avec Direction.SOUTH
 		 */
 		assertTrue(MapTools.nextForwardPosition(new Coordinates(0, 0),
-				Direction.SOUTH).getX() == new Coordinates(0, -1).getX());
+				Direction.SOUTH).getX() == new Coordinates(0, 1).getX());
 		assertTrue(MapTools.nextForwardPosition(new Coordinates(0, 0),
-				Direction.SOUTH).getY() == new Coordinates(0, -1).getY());
+				Direction.SOUTH).getY() == new Coordinates(0, 1).getY());
 
 		/*
 		 * Test sur les coordonnees avec Direction.EAST
@@ -57,17 +57,17 @@ public class MapToolsUnitTest {
 		 * Test sur les coordonnees avec Direction.NORTH
 		 */
 		assertTrue(MapTools.nextBackwardPosition(new Coordinates(0, 0),
-				Direction.NORTH).getX() == new Coordinates(0, -1).getX());
+				Direction.NORTH).getX() == new Coordinates(0, 1).getX());
 		assertTrue(MapTools.nextBackwardPosition(new Coordinates(0, 0),
-				Direction.NORTH).getY() == new Coordinates(0, -1).getY());
+				Direction.NORTH).getY() == new Coordinates(0, 1).getY());
 
 		/*
 		 * Test sur les coordonnees avec Direction.SOUTH
 		 */
 		assertTrue(MapTools.nextBackwardPosition(new Coordinates(0, 0),
-				Direction.SOUTH).getX() == new Coordinates(0, 1).getX());
+				Direction.SOUTH).getX() == new Coordinates(0, -1).getX());
 		assertTrue(MapTools.nextBackwardPosition(new Coordinates(0, 0),
-				Direction.SOUTH).getY() == new Coordinates(0, 1).getY());
+				Direction.SOUTH).getY() == new Coordinates(0, -1).getY());
 
 		/*
 		 * Test sur les coordonnees avec Direction.EAST

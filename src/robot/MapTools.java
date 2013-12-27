@@ -5,20 +5,26 @@ import static robot.Direction.*;
 public class MapTools {
 
     static Coordinates nextForwardPosition(Coordinates position, Direction direction) {
+    	/*
+    	 * Direction nord et sud inversees (on est dans un repere ou y s'incremente vers le bas
+    	 */
         if (direction == NORTH)
-            return new Coordinates(position.getX(), position.getY() + 1);
-        if (direction == SOUTH)
             return new Coordinates(position.getX(), position.getY() - 1);
+        if (direction == SOUTH)
+            return new Coordinates(position.getX(), position.getY() + 1);
         if (direction == EAST)
             return new Coordinates(position.getX() + 1, position.getY());
         return new Coordinates(position.getX() - 1, position.getY());
     }
 
     static Coordinates nextBackwardPosition(Coordinates position, Direction direction) {
+    	/*
+    	 * Meme combat
+    	 */
         if (direction == NORTH)
-            return new Coordinates(position.getX(), position.getY() - 1);
-        if (direction == SOUTH)
             return new Coordinates(position.getX(), position.getY() + 1);
+        if (direction == SOUTH)
+            return new Coordinates(position.getX(), position.getY() - 1);
         if (direction == EAST)
             return new Coordinates(position.getX() - 1, position.getY());
         return new Coordinates(position.getX() + 1, position.getY());
