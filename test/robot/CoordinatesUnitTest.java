@@ -4,6 +4,14 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * 
+ * @author De Gieter Antoine
+ * @author Colin Arnaud
+ * 
+ * Teste les methodes de Coordinates
+ *
+ */
 public class CoordinatesUnitTest {
 
 	@Test
