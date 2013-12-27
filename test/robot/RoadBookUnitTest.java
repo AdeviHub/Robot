@@ -18,7 +18,7 @@ public class RoadBookUnitTest {
 	private RoadBook rb;
 
 	@Test
-	public void testHasInstruction() {
+	public void hasInstructionTest() {
 		List<Instruction> instructions = new ArrayList<Instruction>();
 		rb = new RoadBook(instructions);
 		// parce que c'est vide du coup
@@ -30,7 +30,7 @@ public class RoadBookUnitTest {
 	}
 
 	@Test
-	public void testNext() {
+	public void nextTest() {
 		List<Instruction> instructions = new ArrayList<Instruction>();
 		instructions.add(Instruction.TURNLEFT);
 		rb = new RoadBook(instructions);
