@@ -12,7 +12,7 @@ public class LandSensor {
 
     public LandSensor(Random random) {
         carte = new HashMap<Coordinates, Land>();
-        this.random = random;
+		this.random = random;
     }
 
     public double getPointToPointEnergyCoefficient(Coordinates coordinate1, Coordinates coordinate2) throws LandSensorDefaillance, InaccessibleCoordinate {
