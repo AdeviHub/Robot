@@ -31,12 +31,6 @@ public class RoadBookCalculator {
         /*
          * Gestion de la prochaine instruction a prendre
          */
-		try {
-			Thread.sleep(100);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-        System.out.println(directionList.contains(direction));
 		if (directionList.contains(direction)) {
 			instructions.add(Instruction.FORWARD);
             return calculateRoadBook(direction,
