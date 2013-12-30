@@ -146,7 +146,7 @@ public class RobotUnitTest {
 	}
 
 	@Test
-	public void lestGoTest() {
+	public void letsGoTest() {
 		this.robot = new Robot();
 		this.t = mock(Random.class);
 		when(t.nextInt(anyInt())).thenReturn(0);
